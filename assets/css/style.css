@@ -297,6 +297,24 @@ p { margin: 0; }
 .timeline__item h3 { font-size: 20px; margin: 10px 0 12px; }
 .timeline__item p { color: var(--muted); font-size: 15px; }
 
+/* Journey */
+.journey { background: #fff; }
+.milestones {
+  list-style: none; padding: 0; margin: 64px 0 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.milestone {
+  background: var(--paper); border-radius: var(--radius); padding: 32px 28px 30px;
+  border-top: 4px solid var(--sea);
+}
+.milestone:last-child { border-top-color: var(--sun); }
+.milestone__date {
+  display: block; font-family: var(--font-latin); font-weight: 700;
+  font-size: clamp(28px, 3vw, 38px); line-height: 1; color: var(--ink); letter-spacing: -.01em;
+}
+.milestone h3 { font-size: 20px; margin: 18px 0 10px; }
+.milestone p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+
 /* Products */
 .products { background: var(--ink-2); color: #fff; }
 .products .label { color: rgba(255,255,255,.55); }
@@ -315,6 +333,12 @@ p { margin: 0; }
 .product__body { padding: 32px clamp(24px, 3vw, 40px) 40px; }
 .product__tag { font-size: 13px; letter-spacing: .1em; color: var(--sea); }
 .product--trend .product__tag { color: var(--sun-soft); }
+.product__status {
+  display: inline-block; margin-top: 10px; font-family: var(--font-latin); font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; padding: 3px 12px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.8);
+}
+.product__status--live { border-color: var(--sea); color: var(--sea); }
 .product__name { font-family: var(--font-latin); font-size: clamp(32px, 3.6vw, 44px); font-weight: 700; margin: 6px 0 16px; letter-spacing: -.01em; }
 .product__body > p { color: rgba(255,255,255,.7); }
 .product__points { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -413,7 +437,7 @@ html[lang="en"] .company > div { grid-template-columns: 8.5em 1fr; }
   .timeline__item::before { top: -9px; }
 }
 @media (max-width: 860px) {
-  .vision__grid, .mission__layout, .products__grid, .contact__layout { grid-template-columns: 1fr; }
+  .vision__grid, .mission__layout, .products__grid, .contact__layout, .milestones { grid-template-columns: 1fr; }
   .values__grid { grid-template-columns: repeat(2, 1fr); }
   .hide-sm { display: none; }
 }
